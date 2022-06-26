@@ -225,18 +225,22 @@ function ricarica(ele) {
 }
 let body = document.querySelector('body');
 body != null;
+let foto = ['download', 'OIP', 'ter'];
+let ind = -1;
 document.addEventListener('DOMContentLoaded', () => {
     let flex = document.createElement('div');
     flex.className = 'flex';
     let div1 = document.querySelector('#append');
     div1.appendChild(flex);
     telefoni.forEach(function (ele) {
+        ind++;
         let telefono = document.createElement('div');
         telefono.className = 'telefono';
+        telefono.style.backgroundImage = 'url(../img/' + foto[ind] + '.jpg)';
         flex.appendChild(telefono);
         let navbar = document.createElement('div');
         navbar.className = 'navbar';
-        navbar.innerHTML = '<p>logo</p><p>Saldo:' + ele.carica.toFixed(2) + '$</p>';
+        navbar.innerHTML = '<p><i class="bi bi-apple"></i></p><p>Saldo:' + ele.carica.toFixed(2) + '$</p>';
         telefono.appendChild(navbar);
         let main = document.createElement('div');
         let btn = document.createElement('button');
@@ -257,6 +261,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let footer = document.createElement('div');
         footer.className = 'footer';
         let p = document.createElement('p');
+        if (ele == iphone1) {
+            p.style.color = 'black';
+        }
         p.innerHTML = '<i class="bi bi-telephone-outbound-fill" ></i>...' + ele.numeroChiamate + 'chiamate effettuate';
         let reset = document.createElement('button');
         reset.innerHTML = '<i class="bi bi-telephone-minus-fill"></i>';
@@ -267,9 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 function aggiorna_dati(ele, ele1, ele2) {
-    document.querySelectorAll('.navbar')[0].innerHTML = '<p>logo</p><p>Saldo:' + iphone.carica.toFixed(2) + '$</p>';
-    document.querySelectorAll('.navbar')[1].innerHTML = '<p>logo</p><p>Saldo:' + iphone1.carica.toFixed(2) + '$</p>';
-    document.querySelectorAll('.navbar')[2].innerHTML = '<p>logo</p><p>Saldo:' + iphone2.carica.toFixed(2) + '$</p>';
+    document.querySelectorAll('.navbar')[0].innerHTML = '<p><i class="bi bi-apple"></i></p><p>Saldo:' + iphone.carica.toFixed(2) + '$</p>';
+    document.querySelectorAll('.navbar')[1].innerHTML = '<p><i class="bi bi-apple"></i></p><p>Saldo:' + iphone1.carica.toFixed(2) + '$</p>';
+    document.querySelectorAll('.navbar')[2].innerHTML = '<p><i class="bi bi-apple"></i></p><p>Saldo:' + iphone2.carica.toFixed(2) + '$</p>';
     document.querySelectorAll('p')[2].innerHTML = '<i class="bi bi-telephone-outbound-fill" ></i>...' + ele.numeroChiamate + 'chiamate effettuate';
     document.querySelectorAll('p')[5].innerHTML = '<i class="bi bi-telephone-outbound-fill" ></i>...' + ele1.numeroChiamate + 'chiamate effettuate';
     document.querySelectorAll('p')[8].innerHTML = '<i class="bi bi-telephone-outbound-fill" ></i>...' + ele2.numeroChiamate + 'chiamate effettuate';

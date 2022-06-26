@@ -7,11 +7,16 @@
     justify-content: space-around;
     
 }
+.soldi button{
+    margin-top: 0rem;
+}
 .telefono{
     border: 1px solid black;
     width: 200px;
     height:400px;
     box-sizing: border-box;
+    border-radius: 2%;
+    box-shadow: 2px 5px 10px black;
     /* padding: 1rem; */
     
     
@@ -22,7 +27,8 @@
     flex-direction: column;
     text-align: center;
     flex-basis: 33%;
-    margin: 3rem auto;
+    margin: 0 auto;
+    
     
     
 }
@@ -33,12 +39,14 @@
     background-color:rgb(57, 53, 53); 
     color: rgb(240, 240, 240);
     padding: 0.5rem;
+    
 }
 .telefono .footer{
     flex-direction: row;
     justify-content: space-between;
     margin-top: 5rem;
     margin-bottom: 0;
+    color: rgb(246, 247, 248);
     
 }
 button{
